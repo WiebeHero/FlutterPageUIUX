@@ -12,17 +12,17 @@ class QueueButton extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    return MouseRegion(
-      cursor: SystemMouseCursors.click,
-      child: SizedBox(
-        width: 400,
-        height: 100,
-        child: Container(
-          alignment: Alignment.topLeft,
-          child: GestureDetector(
-            onTap: (){
-
-            },
+    return GestureDetector(
+      onTap: (){
+        Provider.of<ContentManager>(context, listen: false).setCurrentContent = "Queue";
+      },
+      child: MouseRegion(
+        cursor: SystemMouseCursors.click,
+        child: SizedBox(
+          width: 400,
+          height: 100,
+          child: Container(
+            alignment: Alignment.topLeft,
             child: Stack(
               children: [
                 Transform.translate(
